@@ -518,20 +518,23 @@ footer {
     opacity: 0;
   }
 }
-
-
 @media (max-width: 768px) {
+
+  .gallery-section {
+    padding: 60px 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
   .typewriter {
     white-space: normal;
     border-right: none;
     animation: none;
-    width: auto;
-  }
-
-  .photo-gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    width: 100%;
+    font-size: 2.2rem;
   }
 
   .photo-container {
@@ -540,31 +543,31 @@ footer {
 
   .message-card {
     padding: 40px 20px;
-    margin:0 20px;
+    margin: 0 15px;
   }
 
   .floating-hearts {
     flex-wrap: wrap;
     gap: 10px;
   }
-
-  .heart {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 480px) {
 
   .hero-content {
-    padding:0 35px;
+    padding: 0 20px;
   }
 
   .cta-button {
-    padding: 12px 24px;
+    padding: 12px 22px;
     font-size: 1rem;
   }
 
+  .photo-container {
+    height: 220px;
+  }
+
   .section-title {
-    margin-bottom: 40px;
+    font-size: 2rem;
   }
 }
