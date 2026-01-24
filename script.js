@@ -248,16 +248,39 @@ photoStyle.textContent = `
 }
 `;
 
-document.head.appendChild(photoStyle);
-const music = document.getElementById("bg-music");
+// ================= MUSIC =================
+const bgMusic = document.getElementById("bg-music");
+const musicBtn = document.getElementById("musicBtn");
+
+let isPlaying = false;
 
 function toggleMusic() {
-  if (music.paused) {
-    music.play();
+  if (!bgMusic) return;
+
+  if (isPlaying) {
+    bgMusic.pause();
+    musicBtn.textContent = "🔊";
   } else {
-    music.pause();
+    bgMusic.volume = 0.6;
+    bgMusic.play().catch(() => {});
+    musicBtn.textContent = "🔇";
   }
+  isPlaying = !isPlaying;
 }
+
+musicBtn.addEventListener("click", toggleMusic);
+
+// Auto play after first click (browser rule)
+document.addEventListener("click", () => {
+  if (!isPlaying) {
+    bgMusic.play().catch(() => {});
+    isPlaying = true;
+    musicBtn.textContent = "🔇";
+  }
+}, { once: true });
+
+
+// ================= SPARKLE EFFECT =================
 document.addEventListener("mousemove", (e) => {
   const sparkle = document.createElement("div");
   sparkle.className = "sparkle";
@@ -265,12 +288,18 @@ document.addEventListener("mousemove", (e) => {
   sparkle.style.top = e.pageY + "px";
 
   document.body.appendChild(sparkle);
-
   setTimeout(() => sparkle.remove(), 600);
 });
+
+
+// ================= LOVE POPUP =================
 setTimeout(() => {
-  document.getElementById("lovePopup").classList.add("show");
+  const popup = document.getElementById("lovePopup");
+  if (popup) popup.classList.add("show");
 }, 8000);
+
+
+// ================= FLOWER PETALS =================
 function createPetals() {
   for (let i = 0; i < 12; i++) {
     const petal = document.createElement("div");
@@ -279,7 +308,8 @@ function createPetals() {
     petal.style.left = Math.random() * 100 + "vw";
     petal.style.top = "-10vh";
     petal.style.fontSize = "2rem";
-    petal.style.animation = `petalFall ${Math.random()*5+5}s linear infinite`;
+    petal.style.pointerEvents = "none";
+    petal.style.animation = `petalFall ${Math.random() * 5 + 5}s linear infinite`;
     document.body.appendChild(petal);
   }
 }
