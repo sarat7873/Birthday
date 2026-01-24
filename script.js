@@ -248,27 +248,22 @@ photoStyle.textContent = `
 }
 `;
 
-// ================= MUSIC =================
-const bgMusic = document.getElementById("bg-music");
+const music = document.getElementById("bg-music");
 const musicBtn = document.getElementById("musicBtn");
 
 let isPlaying = false;
 
-function toggleMusic() {
-  if (!bgMusic) return;
-
-  if (isPlaying) {
-    bgMusic.pause();
-    musicBtn.textContent = "🔊";
-  } else {
-    bgMusic.volume = 0.6;
-    bgMusic.play().catch(() => {});
-    musicBtn.textContent = "🔇";
-  }
-  isPlaying = !isPlaying;
-}
-
-musicBtn.addEventListener("click", toggleMusic);
+musicBtn.onclick = function () {
+    if (!isPlaying) {
+        music.play();
+        musicBtn.textContent = "🔊";
+        isPlaying = true;
+    } else {
+        music.pause();
+        musicBtn.textContent = "🔇";
+        isPlaying = false;
+    }
+};
 
 // Auto play after first click (browser rule)
 document.addEventListener("click", () => {
