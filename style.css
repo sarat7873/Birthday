@@ -390,7 +390,7 @@ body {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 40px;
-  color: #fff;
+  color: #8d0d42;
 }
 
 /* Message Text */
@@ -414,7 +414,7 @@ body {
   font-size: 1.3rem;
   font-weight: 600;
   margin-top: 30px;
-  color: #ffeb3b;
+  color: yellow;
 }
 
 /* Message Hearts */
