@@ -368,8 +368,8 @@ body {
 /* Message Section */
 .message-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #667eea, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #f3c4e5, #f0d2de 100%);
+  color: rgb(17, 15, 15);
 }
 
 /* Message Card */
@@ -414,7 +414,7 @@ body {
   font-size: 1.3rem;
   font-weight: 600;
   margin-top: 30px;
-  color: yellow;
+  color: rgb(231, 18, 117);
 }
 
 /* Message Hearts */
@@ -458,7 +458,7 @@ body {
 
 /* Footer */
 footer {
-  background: #8b3a3a;
+  background: #ec0794;
   color: white;
   text-align: center;
   padding: 30px 0;
@@ -532,6 +532,225 @@ footer {
     opacity: 0;
   }
 }
+
+.timeline-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #f0d2de, #ffffff);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(#ff5f9e, #ff9acb);
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    width: 16px;
+    height: 16px;
+    background: #ff4f8b;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -8px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -8px;
+}
+
+.timeline-date {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ff4f8b;
+    font-size: 16px;
+}
+
+.timeline-text {
+    background: #ffffff;
+    padding: 18px 22px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    display: inline-block;
+    max-width: 320px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ================= REASONS SECTION ================= */
+.reasons-section {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.reason-card {
+    padding: 22px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffe0ec, #fff);
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.reason-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= PROMISE SECTION ================= */
+.promise-section {
+    padding: 90px 20px;
+    background: linear-gradient(180deg, #e8d6e2, #fff0f6);
+}
+
+.promise-card {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.promise-text {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ================= QUOTES SECTION ================= */
+.quotes-section {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.quotes {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.quote {
+    padding: 26px;
+    margin-bottom: 22px;
+    border-left: 5px solid #ff5f9e;
+    background: #fff0f6;
+    border-radius: 14px;
+    font-style: italic;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ================= DREAMS SECTION ================= */
+.dreams-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #fff0f6, #ffffff);
+}
+
+.dreams-content {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+}
+
+.dreams-content p {
+    font-size: 16px;
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+/* ================= FADE ANIMATION ================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-in-text {
+    opacity: 0;
+    animation: fadeText 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeText {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 40px;
+        padding-right: 10px;
+        text-align: left !important;
+    }
+
+    .timeline-item::before {
+        left: 2px !important;
+        right: auto;
+    }
+
+    .timeline-text {
+        max-width: 100%;
+    }
+}
+
+
+
 @media (max-width: 768px) {
 
   .gallery-section {
