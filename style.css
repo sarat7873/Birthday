@@ -852,7 +852,7 @@ footer {
     font-weight: 700;
     color: #77173a;
     background: linear-gradient(45deg, #870c39, #e73fa9, #310e1a);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: pulse 1.5s infinite;
 }
