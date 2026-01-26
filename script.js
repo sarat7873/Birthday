@@ -247,7 +247,6 @@ photoStyle.textContent = `
   }
 }
 `;
-
 const music = document.getElementById("bg-music");
 const musicBtn = document.getElementById("musicBtn");
 
@@ -264,8 +263,6 @@ musicBtn.onclick = function () {
         isPlaying = false;
     }
 };
-
-// Auto play after first click (browser rule)
 document.addEventListener("click", () => {
   if (!isPlaying) {
     bgMusic.play().catch(() => {});
@@ -273,9 +270,6 @@ document.addEventListener("click", () => {
     musicBtn.textContent = "🔇";
   }
 }, { once: true });
-
-
-// ================= SPARKLE EFFECT =================
 document.addEventListener("mousemove", (e) => {
   const sparkle = document.createElement("div");
   sparkle.className = "sparkle";
@@ -285,16 +279,10 @@ document.addEventListener("mousemove", (e) => {
   document.body.appendChild(sparkle);
   setTimeout(() => sparkle.remove(), 600);
 });
-
-
-// ================= LOVE POPUP =================
 setTimeout(() => {
   const popup = document.getElementById("lovePopup");
   if (popup) popup.classList.add("show");
 }, 8000);
-
-
-// ================= FLOWER PETALS =================
 function createPetals() {
   for (let i = 0; i < 12; i++) {
     const petal = document.createElement("div");
@@ -309,45 +297,40 @@ function createPetals() {
   }
 }
 createPetals();
-
 document.addEventListener("DOMContentLoaded", function () {
 
     function updateLoveTimer() {
         const startDate = new Date("2017-12-18T00:00:00");
         const now = new Date();
-
         let diff = now - startDate;
-
         let totalSeconds = Math.floor(diff / 1000);
         let totalMinutes = Math.floor(totalSeconds / 60);
         let totalHours = Math.floor(totalMinutes / 60);
-        let totalDays = Math.floor(totalHours / 24);
-
         let years = now.getFullYear() - startDate.getFullYear();
         let months = now.getMonth() - startDate.getMonth();
         let days = now.getDate() - startDate.getDate();
-
         if (days < 0) {
             months -= 1;
             const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
             days += prevMonth.getDate();
         }
-
         if (months < 0) {
             years -= 1;
             months += 12;
         }
-
         let hours = totalHours % 24;
         let minutes = totalMinutes % 60;
         let seconds = totalSeconds % 60;
-
         const timerEl = document.getElementById("love-timer");
         timerEl.innerHTML = `
-            ${years}Y : ${months}M : ${days}D : ${hours}H : ${minutes}M : ${seconds}S
+            <span>${years}<small>Years</small></span>
+            <span>${months}<small>Months</small></span>
+            <span>${days}<small>Days</small></span>
+            <span>${hours}<small>Hours</small></span>
+            <span>${minutes}<small>Minutes</small></span>
+            <span>${seconds}<small>Seconds</small></span>
         `;
     }
-
     setInterval(updateLoveTimer, 1000);
     updateLoveTimer();
 });
