@@ -455,10 +455,9 @@ body {
     transform: scale(1.1);
   }
 }
-
 /* Footer */
 footer {
-  background: #ec0794;
+  background: #461232;
   color: white;
   text-align: center;
   padding: 30px 0;
@@ -467,8 +466,6 @@ footer {
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
 }
-
-/* Fade In Up Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -748,9 +745,6 @@ footer {
         max-width: 100%;
     }
 }
-
-
-
 @media (max-width: 768px) {
 
   .gallery-section {
