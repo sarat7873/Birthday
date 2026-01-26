@@ -10,7 +10,6 @@ html, body {
     overflow-x: hidden;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -24,8 +23,6 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
-/* Background Particles */
 .particles {
   position: fixed;
   top: 0;
@@ -36,7 +33,6 @@ body {
   z-index: 1;
 }
 
-/* Individual Particle */
 .particle {
   position: absolute;
   font-size: 20px;
@@ -87,7 +83,6 @@ body {
   text-align: center;
   padding:0 20px;
 }
-/* Typewriter Text */
 .typewriter {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(2.5rem, 6vw, 5rem);
@@ -101,14 +96,12 @@ body {
   animation: typewriter 4s steps(26) 1s forwards, blink 1s infinite;
 }
 
-/* Typewriter animation */
 @keyframes typewriter {
   to {
     width: 100%;
   }
 }
 
-/* Cursor blink */
 @keyframes blink {
   0%,
   50% {
@@ -119,7 +112,6 @@ body {
   }
 }
 
-/* Subtitle */
 .subtitle {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   color: #8b3a3a;
@@ -128,7 +120,6 @@ body {
   animation: fadeInUp 1s ease 3s forwards;
 }
 
-/* Floating Hearts */
 .floating-hearts {
   display: flex;
   justify-content: center;
@@ -142,15 +133,12 @@ body {
   font-size: 2rem;
   animation: bounce 2s ease-in-out infinite;
 }
-
-/* Heart delays */
 .heart:nth-child(1) { animation-delay: 0s; }
 .heart:nth-child(2) { animation-delay: 0.2s; }
 .heart:nth-child(3) { animation-delay: 0.4s; }
 .heart:nth-child(4) { animation-delay: 0.6s; }
 .heart:nth-child(5) { animation-delay: 0.8s; }
 
-/* Bounce animation */
 @keyframes bounce {
   0%, 
   20%,
@@ -166,8 +154,6 @@ body {
     transform: translateY(-10px);
   }
 }
-
-/* CTA Button */
 .cta-button {
   background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
   color: white;
@@ -188,7 +174,6 @@ body {
   background: linear-gradient(45deg, #ff5555, #ff7777);
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 30px;
@@ -197,7 +182,6 @@ body {
   opacity: 0;
   animation: fadeInUp 1s ease 6s forwards;
 }
-/* Scroll Arrow */
 .scroll-arrow {
   width: 30px;
   height: 50px;
@@ -206,7 +190,6 @@ body {
   position: relative;
 }
 
-/* Scroll Dot */
 .scroll-arrow::before {
   content: '';
   position: absolute;
@@ -220,7 +203,6 @@ body {
   animation: scrollDot 1.5s ease-in-out infinite;
 }
 
-/* Scroll Animation */
 @keyframes scrollDot {
   0% {
     top: 8px;
@@ -232,21 +214,17 @@ body {
     opacity: 0;
   }
 }
-
-/* Gallery Section */
 .gallery-section {
   padding: 100px;
   background: linear-gradient(100deg, #fff5f5 0%, #faf7f7 100%);
 }
 
-/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding:0 20px;
 }
 
-/* Section Title */
 .section-title {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -257,7 +235,6 @@ body {
   transform: translateY(50px);
   transition: all 0.6s ease;
 }
-/* Section title animation */
 .section-title {
   opacity: 0;
   transform: translateY(40px);
@@ -269,15 +246,12 @@ body {
   transform: translateY(0);
 }
 
-/* Gallery Grid */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   padding: 20px 0;
 }
-
-/* Photo Card */
 .photo-card {
   opacity: 0;
   transform: translateY(50px);
@@ -291,8 +265,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Photo Container */
 .photo-container {
   position: relative;
   overflow: hidden;
@@ -300,19 +272,15 @@ body {
   height: 300px;
 
 }
-
 .photo-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
-
 .photo-container:hover img {
   transform: scale(1.1) rotate(2deg);
 }
-
-/* Photo Overlay */
 .photo-overlay {
   position: absolute;
   top: 0;
@@ -327,12 +295,10 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
 .photo-container:hover .photo-overlay {
   opacity: 1;
 }
 
-/* Caption */
 .photo-caption {
   color: #fff;
   font-size: 1.1rem;
@@ -341,12 +307,9 @@ body {
   transform: translateY(20px);
   transition: transform 0.3s ease 0.1s;
 }
-
 .photo-container:hover .photo-caption {
   transform: translateY(0);
 }
-
-/* Like Button */
 .like-btn {
   background: none;
   border: none;
@@ -356,23 +319,19 @@ body {
   align-self: flex-end;
   transition: transform 0.3s ease;
 }
-
 .like-btn:hover {
   transform: scale(1.2);
 }
-
 .like-btn.liked .heart-icon {
   color: #ff6b6b;
 }
 
-/* Message Section */
 .message-section {
   padding: 100px 0;
   background: linear-gradient(135deg, #f3c4e5, #f0d2de 100%);
   color: rgb(17, 15, 15);
 }
 
-/* Message Card */
 .message-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -385,15 +344,12 @@ body {
   margin:0 auto;
 }
 
-/* Message Title */
 .message-title {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 40px;
   color: #8d0d42;
 }
-
-/* Message Text */
 .message-text {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -408,7 +364,6 @@ body {
   transform: translateY(0);
 }
 
-/* Message Signature */
 .message-signature {
   font-family: 'Dancing Script', cursive;
   font-size: 1.3rem;
@@ -417,7 +372,6 @@ body {
   color: rgb(231, 18, 117);
 }
 
-/* Message Hearts */
 .message-hearts {
   margin-top: 30px;
   display: flex;
@@ -442,7 +396,6 @@ body {
   animation-delay: 0.6s;
 }
 
-/* Heart Beat Animation */
 @keyframes heartBeat {
   0%,
   100% {
@@ -455,7 +408,6 @@ body {
     transform: scale(1.1);
   }
 }
-/* Footer */
 footer {
   background: #461232;
   color: white;
@@ -609,7 +561,6 @@ footer {
     line-height: 1.6;
 }
 
-/* ================= REASONS SECTION ================= */
 .reasons-section {
     padding: 80px 20px;
     background: #ffffff;
@@ -635,8 +586,6 @@ footer {
 .reason-card:hover {
     transform: translateY(-8px);
 }
-
-/* ================= PROMISE SECTION ================= */
 .promise-section {
     padding: 90px 20px;
     background: linear-gradient(180deg, #e8d6e2, #fff0f6);
@@ -657,8 +606,6 @@ footer {
     line-height: 1.8;
     margin-bottom: 20px;
 }
-
-/* ================= QUOTES SECTION ================= */
 .quotes-section {
     padding: 80px 20px;
     background: #ffffff;
@@ -678,8 +625,6 @@ footer {
     font-style: italic;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
-
-/* ================= DREAMS SECTION ================= */
 .dreams-section {
     padding: 80px 20px;
     background: linear-gradient(180deg, #fff0f6, #ffffff);
@@ -697,7 +642,6 @@ footer {
     line-height: 1.7;
 }
 
-/* ================= FADE ANIMATION ================= */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -722,7 +666,6 @@ footer {
     }
 }
 
-/* ================= MOBILE FIX ================= */
 @media (max-width: 768px) {
     .timeline::before {
         left: 10px;
