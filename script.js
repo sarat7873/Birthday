@@ -309,3 +309,45 @@ function createPetals() {
   }
 }
 createPetals();
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    function updateLoveTimer() {
+        const startDate = new Date("2017-12-18T00:00:00");
+        const now = new Date();
+
+        let diff = now - startDate;
+
+        let totalSeconds = Math.floor(diff / 1000);
+        let totalMinutes = Math.floor(totalSeconds / 60);
+        let totalHours = Math.floor(totalMinutes / 60);
+        let totalDays = Math.floor(totalHours / 24);
+
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        let hours = totalHours % 24;
+        let minutes = totalMinutes % 60;
+        let seconds = totalSeconds % 60;
+
+        const timerEl = document.getElementById("love-timer");
+        timerEl.innerHTML = `
+            ${years}Y : ${months}M : ${days}D : ${hours}H : ${minutes}M : ${seconds}S
+        `;
+    }
+
+    setInterval(updateLoveTimer, 1000);
+    updateLoveTimer();
+});
